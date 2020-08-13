@@ -48,6 +48,7 @@ struct EditView: View {
             .navigationBarItems(trailing: Button("Done") {
                 self.presentationMode.wrappedValue.dismiss()
             })
+            .onAppear(perform: fetchNearbyPlaces)
         }
     }
     
@@ -63,7 +64,7 @@ struct EditView: View {
                 let decoder = JSONDecoder()
                 
                 if let items = try? decoder.decode(Result.self, from: data) {
-                    self.pages = Array(items.query.pages.values)
+                    self.pages = Array(items.query.pages.values).sorted()
                     self.loadingState = .loaded
                     return
                 }
