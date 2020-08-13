@@ -28,7 +28,4 @@ struct Page: Codable, Comparable {
     static func < (lhs: Page, rhs: Page) -> Bool {
         lhs.title < rhs.title
     }
-    
-    
-    
 }

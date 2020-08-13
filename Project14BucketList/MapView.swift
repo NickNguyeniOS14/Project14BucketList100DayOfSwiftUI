@@ -79,9 +79,6 @@ struct MapView: UIViewRepresentable {
         }
         print("Updating")
     }
-    
-    
-    
 }
 
 extension MKPointAnnotation {
